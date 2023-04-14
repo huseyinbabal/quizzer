@@ -19,3 +19,4 @@ dockers:
       - "--build-arg=module=quizzer-api"
     extra_files:
       - "config.dist.yml"
+    skip_push: false
