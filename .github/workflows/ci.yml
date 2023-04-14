@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+  package: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version-file: go.mod
+
+      - name: Linter
+        uses: golangci/golangci-lint-action@v3
+
+      - name: Go Releaser
+        uses: goreleaser/goreleaser-action@v4
+        with:
+          args: release --clean
+
+

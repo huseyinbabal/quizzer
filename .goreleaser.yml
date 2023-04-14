@@ -1,0 +1,18 @@
+builds:
+  - id: quizzer-api
+    main: cmd/api/main.go
+    goos:
+      - linux
+    goarch:
+      - amd64
+
+dockers:
+  - id: quizzer-api
+    goos: linux
+    goarch: amd64
+    ids:
+      - quizzer-api
+    image_templates:
+      - "ghcr.io/huseyinbabal/quizzer-api:{{ .Tag }}"
+    build_flag_templates:
+      - "--build-arg=module=quizzer-api"

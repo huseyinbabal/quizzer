@@ -1,0 +1,9 @@
+app:
+  port: 3000
+db:
+  host: localhost
+  user: postgres
+  password: s3cr3t
+  name: postgres
+  sslmode: disable
+  port: 5432
