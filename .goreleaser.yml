@@ -1,6 +1,7 @@
 builds:
   - id: quizzer-api
     main: cmd/api/main.go
+    binary: quizzer-api
     goos:
       - linux
     goarch:
