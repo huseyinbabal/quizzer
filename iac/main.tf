@@ -1,6 +1,5 @@
-resource "google_service_account" "default" {
+data "google_service_account" "default" {
   account_id   = var.SERVICE_ACCOUNT
-  display_name = "Quizzer Service Account"
 }
 
 resource "google_container_cluster" "primary" {
