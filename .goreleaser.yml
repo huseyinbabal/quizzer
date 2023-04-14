@@ -17,3 +17,5 @@ dockers:
       - "ghcr.io/huseyinbabal/quizzer-api:{{ .Tag }}"
     build_flag_templates:
       - "--build-arg=module=quizzer-api"
+    extra_files:
+      - "config.dist.yml"
