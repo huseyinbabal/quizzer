@@ -24,5 +24,5 @@ terraform {
 
 
 provider "google" {
-  project = var.PROJECT_ID
+  project = var.PROJECT
 }

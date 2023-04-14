@@ -7,6 +7,6 @@ variable "SERVICE_ACCOUNT" {
   type = string
 }
 
-variable "PROJECT_ID" {
+variable "PROJECT" {
   type = string
 }
