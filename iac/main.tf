@@ -20,7 +20,7 @@ resource "google_container_node_pool" "primary_nodes" {
     preemptible  = true
     machine_type = "e2-medium"
 
-    service_account = google_service_account.default.email
+    service_account = data.google_service_account.default.email
     oauth_scopes    = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
