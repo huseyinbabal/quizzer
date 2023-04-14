@@ -1,6 +1,6 @@
-variable "region" {
+variable "location" {
   type = string
-  default = "us-central1"
+  default = "us-central1-a"
 }
 
 variable "SERVICE_ACCOUNT" {
