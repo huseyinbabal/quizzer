@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/ansrivas/fiberprometheus/v2"
 	"github.com/gofiber/fiber/v2"
 	"github.com/huseyinbabal/quizzer/internal/config"
 	"github.com/huseyinbabal/quizzer/internal/domain/question"
@@ -37,6 +38,10 @@ func main() {
 	defer sqlDB.Close()
 
 	app := fiber.New()
+
+	prometheus := fiberprometheus.New("quizzer-api")
+	prometheus.RegisterAt(app, "/metrics")
+	app.Use(prometheus.Middleware)
 
 	q, err := question.New(db, logger)
 	if err != nil {
