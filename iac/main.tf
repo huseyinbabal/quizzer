@@ -7,7 +7,7 @@ resource "google_container_cluster" "primary" {
   location = var.location
 
   remove_default_node_pool = true
-  initial_node_count       = 2
+  initial_node_count       = 3
 }
 
 resource "google_container_node_pool" "primary_nodes" {
